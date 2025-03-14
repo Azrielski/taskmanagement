@@ -23,12 +23,12 @@ def task_management_system():
                 continue
 
             print("Available Users:")
-            for idx, user in enumerate(users, start=1):
-                print(f"{idx}. {user}")
+            for i in range(len(users)):
+                print(f"{i + 1}. {users[i]}")
 
             user_number = int(input("Select a user number: ")) - 1
             if 0 <= user_number < len(users):
-                selected_user = users[user_number].split(", ")[1].split(": ")[1]  
+                selected_user = users[user_number]
                 description = input("Enter task description: ")
                 create_task(description, selected_user)
             else:
@@ -39,17 +39,17 @@ def task_management_system():
             if not tasks:
                 print("No tasks available.")
             else:
-                for task in tasks:
-                    print(task)
+                for i in range(len(tasks)):
+                    print(f"{i + 1}. {tasks[i]}")
 
-        elif choice == "4":  
+        elif choice == "4":
             tasks = get_all_tasks()
             if not tasks:
                 print("No tasks available.")
                 continue
 
-            for idx, task in enumerate(tasks, start=1):
-                print(f"{idx}. {task}")
+            for i in range(len(tasks)):
+                print(f"{i + 1}. {tasks[i]}")
 
             task_number = int(input("Select a task number to update: ")) - 1
             if 0 <= task_number < len(tasks):
@@ -58,14 +58,14 @@ def task_management_system():
             else:
                 print("Invalid selection.")
 
-        elif choice == "5":  # Delete task
+        elif choice == "5":
             tasks = get_all_tasks()
             if not tasks:
                 print("No tasks available.")
                 continue
 
-            for idx, task in enumerate(tasks, start=1):
-                print(f"{idx}. {task}")
+            for i in range(len(tasks)):
+                print(f"{i + 1}. {tasks[i]}")
 
             task_number = int(input("Select a task number to delete: ")) - 1
             if 0 <= task_number < len(tasks):
