@@ -23,7 +23,7 @@ def get_all_users():
     users = session.query(User).all()
     session.close()
     
-    return [f"ID: {user.id}, Name: {user.name}" for user in users]  # Properly formatted
+    return [f"ID: {user.id}, Name: {user.name}" for user in users] 
 
 # Find a user by name
 def find_user_by_name(name):
